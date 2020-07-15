@@ -14,38 +14,34 @@ digital=1;                                  //define digital input
 analog=1;                                   //define analog input
 motorpin=0;                                 //define output    
 
-while(1)
-{
-		if(digital==0)                         //rain
-{		
-		
-			  							if(analog==1)	
-										{  k=125 ; }          //normal speed(2 sec)
-				  						else
-							  		{  k=75  ;  }         //fast speed(1 sec)
+while(1){
+	if(digital==0) //rain
+	{
+		if(analog==1){
+			k=125;
+		}                         //normal speed(2 sec)
+	else{
+		k=75; 
+	}                                 //fast speed(1 sec)
 										
-		  								for(i=0;i<k;i++)
-									 {
-									 motorpin=1;
-									 delay(20);           //1ms
-									 motorpin=0;
-									 delay(380);          //19ms
-									 }
-									 
-   									 for(i=0;i<k;i++)
-									 {
-									 motorpin=1;
-									 delay(40);          //2ms
-									 motorpin=0;
-									 delay(360);         //18ms
-									}
- }//end of if	
-					   					else             //no rain
-									{
-										motorpin=0;
-									}
- }//end of while
- }//end of main
+	for(i=0;i<k;i++){
+		motorpin=1;
+		delay(20);                 //1ms
+	        motorpin=0;
+		delay(380);               //19ms
+	}
+	for(i=0;i<k;i++){
+		motorpin=1;
+		delay(40);                 //2ms
+		motorpin=0;
+		delay(360);                //18ms
+	}                                                                //end of if	
+	else                                                     //no rain
+	{
+	motorpin=0;
+	}
+ }					//end of while
+ }					//end of main
   
  void delay(int multiplier)           // 50usec timer
 {
